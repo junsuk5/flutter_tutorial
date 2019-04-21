@@ -3,6 +3,7 @@ import 'package:flutter_tutorial/src/MyAnimatedContainer.dart';
 import 'package:flutter_tutorial/src/MyAnimatedOpacity.dart';
 import 'package:flutter_tutorial/src/MyDrawer.dart';
 import 'package:flutter_tutorial/src/MySnackBar.dart';
+import 'package:flutter_tutorial/src/MyOrientation.dart';
 
 void main() => runApp(MyApp());
 
@@ -60,6 +61,13 @@ class _HomeState extends State<Home> {
           onTap: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => MySnackBar()));
+          },
+        ),
+        ListTile(
+          title: Text('화면 방향에 따른 처리'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyOrientation()));
           },
         ),
       ],
