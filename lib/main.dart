@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/src/MyAnimatedContainer.dart';
 import 'package:flutter_tutorial/src/MyAnimatedOpacity.dart';
 import 'package:flutter_tutorial/src/MyDrawer.dart';
-import 'package:flutter_tutorial/src/MySnackBar.dart';
 import 'package:flutter_tutorial/src/MyOrientation.dart';
+import 'package:flutter_tutorial/src/MySnackBar.dart';
+import 'package:flutter_tutorial/src/MyTabController.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,6 +69,13 @@ class _HomeState extends State<Home> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MyOrientation()));
+          },
+        ),
+        ListTile(
+          title: Text('TabController'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyTabController()));
           },
         ),
       ],
