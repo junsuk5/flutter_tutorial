@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/src/MyAnimatedContainer.dart';
 import 'package:flutter_tutorial/src/MyAnimatedOpacity.dart';
 import 'package:flutter_tutorial/src/MyDrawer.dart';
+import 'package:flutter_tutorial/src/MyFormValidation.dart';
 import 'package:flutter_tutorial/src/MyOrientation.dart';
 import 'package:flutter_tutorial/src/MySnackBar.dart';
 import 'package:flutter_tutorial/src/MyTabController.dart';
@@ -76,6 +77,13 @@ class _HomeState extends State<Home> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MyTabController()));
+          },
+        ),
+        ListTile(
+          title: Text('MyFormValidation'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyFormValidation()));
           },
         ),
       ],
