@@ -7,24 +7,42 @@ import 'package:flutter_tutorial/src/MyOrientation.dart';
 import 'package:flutter_tutorial/src/MySnackBar.dart';
 import 'package:flutter_tutorial/src/MySwipeToDismiss.dart';
 import 'package:flutter_tutorial/src/MyTabController.dart';
+import 'package:flutter_tutorial/src/my_method_channel.dart';
+import 'package:flutter_tutorial/src/stream.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final navigatorKey = GlobalKey<NavigatorState>();
     return MaterialApp(
+      navigatorKey: navigatorKey,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Flutter Tutorial'),
-          ),
-          body: Home()),
+        appBar: AppBar(
+          title: Text('Flutter Tutorial'),
+        ),
+        body: Home(),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          navigatorKey.currentState.push(MaterialPageRoute(builder: (context) => SecondRoute()));
+        }),
+      ),
     );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text(
+          "Hello World",
+          textDirection: TextDirection.ltr,
+        ));
   }
 }
 
@@ -92,6 +110,20 @@ class _HomeState extends State<Home> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MySwipeToDismiss()));
+          },
+        ),
+        ListTile(
+          title: Text('MethodChannel'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyMethodChannel()));
+          },
+        ),
+        ListTile(
+          title: Text('Stream'),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => StreamExam()));
           },
         ),
       ],
