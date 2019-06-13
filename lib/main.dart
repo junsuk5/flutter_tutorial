@@ -7,6 +7,7 @@ import 'package:flutter_tutorial/src/MyOrientation.dart';
 import 'package:flutter_tutorial/src/MySnackBar.dart';
 import 'package:flutter_tutorial/src/MySwipeToDismiss.dart';
 import 'package:flutter_tutorial/src/MyTabController.dart';
+import 'package:flutter_tutorial/src/mediaquery.dart';
 import 'package:flutter_tutorial/src/my_method_channel.dart';
 import 'package:flutter_tutorial/src/stream.dart';
 
@@ -124,6 +125,13 @@ class _HomeState extends State<Home> {
           onTap: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => StreamExam()));
+          },
+        ),
+        ListTile(
+          title: Text('MediaQuery'),
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MyMediaQuery()));
           },
         ),
       ],
